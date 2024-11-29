@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de Contacto</title>
+</head>
+<body>
+    <h1>Datos Recibidos</h1>
+    <p><strong>Nombre:</strong> <span id="nombre"></span></p>
+    <p><strong>Correo:</strong> <span id="email"></span></p>
+    <p><strong>Mensaje:</strong> <span id="mensaje"></span></p>
+
+    <script>
+        // Leer los parámetros de la URL
+        const params = new URLSearchParams(window.location.search);
+
+        // Mostrar los datos en la página
+        document.getElementById('nombre').textContent = params.get('nombre') || "No proporcionado";
+        document.getElementById('email').textContent = params.get('email') || "No proporcionado";
+        document.getElementById('mensaje').textContent = params.get('mensaje') || "No proporcionado";
+    </script>
+</body>
+</html>
